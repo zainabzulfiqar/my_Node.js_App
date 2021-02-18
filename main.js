@@ -45,7 +45,7 @@ const coursesRoutes=require('./routes/courses');
 app.use('/api/courses',coursesRoutes);
 
 mongoose.connect(
-    "mongodb://127.0.0.1:27017/Courses",
+    process.env['DB_Connection'],
     {useNewUrlParser:true},
     ()=>console.log('connected to Database....')
 );
